@@ -707,7 +707,6 @@ function getDivisions(character, stat) {
 
 async function getCharOutput(characterId) {
   const character = await Character.findById(characterId);
-  console.log
   if (character) {
     const totalStats = await getTotalStats(character);
     if (totalStats) {

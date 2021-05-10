@@ -26,9 +26,9 @@ module.exports.validateRegisterInput = (username, email, password, confirmPasswo
   } else if (password !== confirmPassword) {
     errors.confirmPassword = "Passwords must match";
   } else {
-    const regEx = /^[a-zA-Z0-9]{8,}$/;
+    const regEx = /^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/;
     if (!password.match(regEx)) {
-      errors.password = "Minimum of 8 characters, no spaces, and no wacky characters";
+      errors.password = "8 characters, one lowercase, one uppercase, and one special character";
     }
   }
   return {
