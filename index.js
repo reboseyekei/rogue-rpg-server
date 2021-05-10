@@ -18,7 +18,7 @@ mongoose
   .connect(MONGODB, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
   .then(() => {
     console.log("Mongodb connected");
-    return server.listen(process.env.PORT);
+    return server.listen({port: process.env.PORT});
   })
   .then((res) => {
     console.log(`Server running at ${res.url}`);
